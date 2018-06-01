@@ -16,5 +16,17 @@ pipeline {
                 sh 'echo "Deploy stage"'   
             }
         }
+        
+        stage('Post') {
+            always {
+                echo 'This will always run'
+            }
+            success {
+                echo 'successful pipeline'   
+            }
+            failure {
+                echo 'failed pipeline'
+            }
+        }
     }
 }
